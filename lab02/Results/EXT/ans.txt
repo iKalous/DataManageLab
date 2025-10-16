@@ -1,0 +1,20 @@
+1. 顺序：
+gacha_data -> gacha_available -> text_data
+2. 均是普通查询
+3. 
+gacha_data 是全表查询
+gacha_available type 为 ref, 基于索引的查询
+text_data type 为 eq_ref
+4. 
+rows是根据表的统计信息和索引的选用情况，优化器大概帮你估算出你执行这行函数所需要查询的行数。
+Filter是查询的行数与总行数的比值。其实作用与rows差不多，都是数值越小，效率越高。
+5.
+gacha data表:
+	Using temporary: 创建了一个内部临时表
+	Using filesort: 进行了一次排序
+gacha_available和text data:
+	Using where: 应用了 WHERE 子句进行过滤
+6.似乎没有变化
+7.可以强制指定顺序
+8.JOIN 系统会自动选择顺序
+而STRAIGHT_JOIN会根据用户输入强制指定顺序

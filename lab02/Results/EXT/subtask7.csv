@@ -1,0 +1,3 @@
+1,SIMPLE,ga,,index,"PRIMARY,gacha_available_0_gacha_id",PRIMARY,8,,13986,10,Using where
+1,SIMPLE,td,,eq_ref,PRIMARY,PRIMARY,8,"func,lab02.ga.card_id",1,100,Using where
+1,SIMPLE,gd,,eq_ref,PRIMARY,PRIMARY,4,lab02.ga.gacha_id,1,100,
